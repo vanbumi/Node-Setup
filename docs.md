@@ -121,9 +121,123 @@ Buka browser localhost:5000
 
 dan Buka browser localhost:5000/about
 
-selesai
+~selesai~
 
 
+
+#### Setup Templete Engine
+
+Template Engine kita butuhkan untuk render View dari Server/Backend supaya bisa di lihat oleh visitor.
+
+Ada banyak Templete Engine, yang akan kita gunakan adalah **Handlebars** - https://handlebarsjs.com/
+
+Kita gunakan Handlebars yang sudah terintegrasi dengan Expressjs - https://github.com/ericf/express-handlebars
+
+
+
+**Install Express-Handlebars**
+
+```
+npm install express-handlebars --save
+```
+
+Kembali ke file app.js update kode nya:
+
+Tempatkan kode ini dibawah ```express = require('express')```
+
+```javascript
+var exphbs  = require('express-handlebars');
+```
+
+Tempatkan kode nya dibawah ```const app = express()```
+
+```javascript
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+```
+
+Dan rubah Index Route nya menggunakan ```render``` bukan lagi ```send``` :
+
+```javascript
+app.get('/', (req, res) => {
+    res.render('home');
+});
+
+// Dan
+
+app.get('/', (req, res) => {
+    res.render('about');
+});
+```
+
+Buat folder "views"  di root project.
+
+Dibawah folder  "views" buat file baru : "home.handlebars". 
+
+Dan
+
+Dibawah folder  "views" buat foder baru : "layouts"
+
+Dan
+
+Dibawah folder  "layouts" buat file baru : "main.handlebars"
+
+Dan
+
+Dibawah folder  "layouts" buat file baru : "about.handlebars"
+
+Struktur file nya seperti dibawah ini :
+
+```
+├── app.js
+└── views
+    ├── home.handlebars
+    └── layouts
+        └── main.handlebars
+```
+
+
+
+Update file main.handlebars seperti dibawah :
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Node Web App App</title>
+</head>
+<body>
+
+    {{{body}}}
+
+</body>
+</html>
+```
+
+
+
+Update file homs.handlebars seperti dibawah :
+
+```html
+
+<h1>Selamat Datang di Node Web App</h1>
+
+```
+
+Update file about.handlebars seperti dibawah :
+
+```html
+<h1>Halaman About</h1>
+```
+
+Buka browser localhost:5000
+
+Dan 
+
+localhost:5000/about
+
+~selesai~
 
 
 
