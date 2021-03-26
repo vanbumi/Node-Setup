@@ -1,5 +1,9 @@
 # Setup Node JS Web App
 
+### Part 1
+
+
+
 
 
 #### Setup Environment
@@ -28,7 +32,7 @@
 
 website: https://expressjs.com/
 
----
+
 
 Buat folder project di PC anda:
 
@@ -241,6 +245,124 @@ localhost:5000/about
 selesai
 
 
+
+#### Setup BootstrapJS
+
+Gunakan versi 4 bootsrap (v4.6)
+
+Copy CDN bootsrap -https://getbootstrap.com/docs/4.6/getting-started/introduction/
+
+CSS link CDN
+
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+```
+
+Dan 
+
+JavaScript link CDN
+
+paste di file main.handlebars
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Node Web App App</title>
+</head>
+  
+// start paste  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+// end paste  
+  
+<body>
+
+    {{{body}}}
+  
+  
+ // start paste 
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+// end paste
+  
+</body>
+</html>
+```
+
+Reload browser lihat perubahan style nya.
+
+
+
+Tambahkan : 
+
+* Navbar, 
+* Tambahkan Container diantara body tag ```<body>```
+
+Dan tempatkan di file main.handlebars. Dan lakukan beberapa editing / refactor kode.
+
+Hasilnya akan seperti ini :
+
+```html
+
+```
+
+
+
+#### Membuat folder Partial.
+
+> Partial akan membuat kode lebih rapih dan bersih dengan memisahkan beberapa kode ke file tersendiri.
+
+Dibawah folder  "views" buat folder baru : "partials".
+
+Dibawah folder  "partials" buat file baru : "_navbar.handlebars"
+
+Pindahkan navbar dari main.handlebars ke file "_navbar.handlebars"  
+
+
+
+Dan di file main.handlebars ganti dengan variable :
+
+```
+{{> _navbar}}
+```
+
+Reload browser dan hasilnya tetep sama.
+
+
+
+Tambahkan Jumbotron Bootsrap pada file main.handlebars.
+
+```html
+<div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+</div>
+```
+
+
+
+Pada file about.handlebars tambahkan :
+
+```html
+<h1>About Us</h1>
+
+<p>
+Ini adalah Web App Node/ExpressJS untuk membuat static web page dengan Template Engine Handlebars Express.
+</p>
+
+<p>
+  Version: 1.0.0
+</p>
+```
+
+Selesai
+
+Bersambung ke bagian ke 2 (Part 2)
 
 
 
