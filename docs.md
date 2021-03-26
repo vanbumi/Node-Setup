@@ -79,7 +79,53 @@ Karena kita belum buat route untuk menampilkan halaman web.
 
 
 
-#### Basic Routing
+#### Setup Routing
 
- 
+Setup halaman index : 
+
+```javascript
+app.get('/', (req, res) => {
+  res.send('Halaman Index')
+})
+```
+
+Setup halaman About:
+
+```javascript
+app.get('/about', (req, res) => {
+  res.send('Halaman About')
+})
+```
+
+
+
+#### Install Nodemon
+
+Nodemon digunakan untuk start server node js otomatis, setiap kali update kode di halaman2 project.
+
+Stop server node js dulu dengan Ctrl + c dan lakukan perintah :
+
+```
+npm intall -g nodemon
+```
+
+
+
+Sekarang jalan kan server dengan perintah:
+
+```
+nodemon
+```
+
+Buka browser localhost:5000
+
+dan Buka browser localhost:5000/about
+
+selesai
+
+
+
+
+
+
 
