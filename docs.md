@@ -121,7 +121,7 @@ Buka browser localhost:5000
 
 dan Buka browser localhost:5000/about
 
-~selesai~
+selesai
 
 
 
@@ -192,6 +192,7 @@ Struktur file nya seperti dibawah ini :
 ├── app.js
 └── views
     ├── home.handlebars
+    ├── about.handlebars
     └── layouts
         └── main.handlebars
 ```
@@ -237,7 +238,7 @@ Dan
 
 localhost:5000/about
 
-~selesai~
+selesai
 
 
 
