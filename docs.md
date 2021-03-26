@@ -44,7 +44,42 @@ Buka Terminal, lakukan perintah sbb :
 npm init -y
 ```
 
+Install Express js
 
+```
+npm install --save express
+```
+
+Buka Visual Code, buat file baru app.js
+
+Update kode nya sbb:
+
+```javascript
+const express = require('express')
+const app = express()
+const port = 5000
+
+// Setup server
+app.listen(port, () => {
+	console.log(`Server berjalan di port ${port}`)
+})
+```
+
+Buka Terminal dan jalan kan server Node dengan perintah:
+
+```javascript
+node app.js
+```
+
+Buka browser localhost:5000
+
+Hasilnya Cannot GET /
+
+Karena kita belum buat route untuk menampilkan halaman web.
+
+
+
+#### Basic Routing
 
  
 
